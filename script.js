@@ -31,12 +31,29 @@ function newBook(){
     let lastbook = myLibrary[libraryLength -1];
     console.log(lastbook.info)
         const cell = document.createElement("div");
-        cell.classList.add('content' + libraryLength);
-        cell.textContent = lastbook.info
+        cell.classList.add('content' , 'book' + libraryLength);
+
+        const booktitle = document.createElement("div");
+        booktitle.classList.add('title')
+        booktitle.textContent = lastbook.title
+        const bookauthor = document.createElement("div");
+        bookauthor.classList.add('author')
+        bookauthor.textContent = lastbook.author
+        const bookpagecount = document.createElement("div");
+        bookpagecount.classList.add('pagecount')
+        bookpagecount.textContent = lastbook.pagecount
+        const bookread = document.createElement("div");
+        bookread.classList.add('title')
+        bookread.textContent = lastbook.checkread
+
         const rembutt = document.createElement("button")
         rembutt.innerHTML = "remove book"
         rembutt.className = ("remove" [libraryLength])
         addBook.appendChild(cell)
+        cell.appendChild(booktitle)
+        cell.appendChild(bookauthor)
+        cell.appendChild(bookpagecount)
+        cell.appendChild(bookread)
         cell.appendChild(rembutt);
 
 }

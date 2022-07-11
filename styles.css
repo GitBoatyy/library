@@ -33,10 +33,14 @@ body{
 }
 
 .content{
+    display: flex;
+    flex-direction: column;
     margin-right: 5px;
     color: red;
     font-size: 24px;
 }
+
+
 button {
     margin: 10px;
 }
