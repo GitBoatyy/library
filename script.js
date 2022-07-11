@@ -1,10 +1,10 @@
 let myLibrary = []
 
-let a = ('')
-let b = ('')
-let c = ('')
-let d = ('')
 
+const titleInput = document.querySelector("#title")
+const authorInput = document.querySelector("#author")
+const pagesInput = document.querySelector("#pageN")
+const checkread = document.querySelector("#readbox")
 const addBook = document.querySelector("#allBooks");
 const form = document.querySelector('form');
 var container = document.createElement("div");
@@ -12,22 +12,27 @@ container.classList.add('content');
 
 
 function Book( title, author, pagecount, checkread){
-    this.title = title
-    this.author = "By: " + author
-    this.pagecount = pagecount + " pages"
-    this.checkread = checkread
-    this.info = title + " By " + author + ", " + pagecount + " pages" + ", " + checkread
-    return this.info
+    if(checkread.checked === true){
+        this.title = title
+        this.author = "By: " + author
+        this.pagecount = pagecount + " pages"
+        this.checkread = "Read"
+        this.info = title + " By " + author + ", " + pagecount + " pages" + ", " + checkread
+        return this.info
+    } else{
+        this.title = title
+        this.author = "By: " + author
+        this.pagecount = pagecount + " pages"
+        this.checkread = "not yet read"
+        this.info = title + " By " + author + ", " + pagecount + " pages" + ", " + checkread
+        return this.info
+}
 }
 const theHobbit = new Book( "The Hobbit" ,  "J.R.R. Tolkien" , 295 , "not yet read" )
 
 function newBook(){
-    const titleInput = document.querySelector("#title").value;
-    const authorInput = document.querySelector("#author").value;
-    const pagesInput = document.querySelector("#pageN").value;
-
-    let a = "yes"
-    let newBook = new Book(titleInput, authorInput, pagesInput, a)
+    console.log(checkread.checked)
+    let newBook = new Book(titleInput.value, authorInput.value, pagesInput.value, checkread)
     myLibrary.push(newBook)
     let libraryLength = myLibrary.length
     let lastbook = myLibrary[libraryLength -1];
@@ -56,5 +61,5 @@ function newBook(){
         cell.appendChild(bookpagecount)
         cell.appendChild(bookread)
         cell.appendChild(rembutt)
-        form.reset();
+    form.reset()
 }
