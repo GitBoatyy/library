@@ -10,7 +10,7 @@ const form = document.querySelector('form');
 var container = document.createElement("div");
 container.classList.add('content');
 
-
+//creates a new book array
 function Book( title, author, pagecount, checkread){
     if(checkread.checked === true){
         this.title = title
@@ -28,15 +28,18 @@ function Book( title, author, pagecount, checkread){
         return this.info
 }
 }
-const theHobbit = new Book( "The Hobbit" ,  "J.R.R. Tolkien" , 295 , "not yet read" )
 
+//takes form input and Book output. stores in myLibrary array. 
 function newBook(){
-    console.log(checkread.checked)
     let newBook = new Book(titleInput.value, authorInput.value, pagesInput.value, checkread)
     myLibrary.push(newBook)
+    displayBook()
+}
+
+//takes last book in library array and creates elements to display. resets form.
+function displayBook(){
     let libraryLength = myLibrary.length
     let lastbook = myLibrary[libraryLength -1];
-    console.log(lastbook.info)
         const cell = document.createElement("div");
         cell.classList.add('content' , 'book' + libraryLength);
         const booktitle = document.createElement("div");
@@ -51,7 +54,6 @@ function newBook(){
         const bookread = document.createElement("div");
         bookread.classList.add('title')
         bookread.textContent = lastbook.checkread
-
         const rembutt = document.createElement("button")
         rembutt.innerHTML = "remove book"
         rembutt.className = ("remove" [libraryLength])
@@ -61,5 +63,5 @@ function newBook(){
         cell.appendChild(bookpagecount)
         cell.appendChild(bookread)
         cell.appendChild(rembutt)
-    form.reset()
+        form.reset()
 }
