@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">The Library</div>
+        <form id="addNewBook">
+        <input type="text" name= "title" id="title" placeholder="Enter the book title">
+        <input type="text" name= "author" id="author" placeholder="Who is the author?">
+        <input type="text" name= "pageN" id="pageN" placeholder="How many pages is the book?">
+        <div class="checkBox">
+            <div>Have you read this book?</div>
+            <input type="checkbox" name="readbox" id="readbox" placeholder="Have you read this book?">
+        </div>
+    </form>
+    <button id="addBookPrompt" onclick="newBook(a, b, c, d)"> Add a Book </button>
+
+    <div id="allBooks">
+        <div class="books"> Books</div>
+    </div>
+
+</body>
+<script src="./script.js"></script>
+</html>

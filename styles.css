@@ -1,0 +1,42 @@
+/* library styles */
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+.header{
+    margin: 40px;
+}
+#addNewBook{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    justify-content: center;
+}
+.checkbox{
+    display: flex;
+    flex-direction: row;
+}
+
+#allBooks{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 5px;
+}
+
+.books {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    margin-right: 5px;
+    color: red;
+    font-size: 24px;
+}
+button {
+    margin: 10px;
+}
