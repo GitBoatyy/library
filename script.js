@@ -9,6 +9,9 @@ const addBook = document.querySelector("#allBooks");
 const form = document.querySelector('form');
 var container = document.createElement("div");
 container.classList.add('content');
+document.addEventListener( "click", someListener );
+
+
 
 //creates a new book array
 function Book( title, author, pagecount, checkread){
@@ -40,28 +43,40 @@ function newBook(){
 function displayBook(){
     let libraryLength = myLibrary.length
     let lastbook = myLibrary[libraryLength -1];
-        const cell = document.createElement("div");
-        cell.classList.add('content' , 'book' + libraryLength);
-        const booktitle = document.createElement("div");
-        booktitle.classList.add('title')
-        booktitle.textContent = lastbook.title
-        const bookauthor = document.createElement("div");
-        bookauthor.classList.add('author')
-        bookauthor.textContent = ("By", lastbook.author)
-        const bookpagecount = document.createElement("div");
-        bookpagecount.classList.add('pagecount')
-        bookpagecount.textContent = (lastbook.pagecount)
-        const bookread = document.createElement("div");
-        bookread.classList.add('title')
-        bookread.textContent = lastbook.checkread
-        const rembutt = document.createElement("button")
-        rembutt.innerHTML = "remove book"
-        rembutt.className = ("remove" [libraryLength])
-        addBook.appendChild(cell)
-        cell.appendChild(booktitle)
-        cell.appendChild(bookauthor)
-        cell.appendChild(bookpagecount)
-        cell.appendChild(bookread)
-        cell.appendChild(rembutt)
-        form.reset()
+    const cell = document.createElement("div");
+    cell.classList.add('content' , 'book' + libraryLength);
+    const booktitle = document.createElement("div");
+    booktitle.classList.add('title')
+    booktitle.textContent = lastbook.title
+    const bookauthor = document.createElement("div");
+    bookauthor.classList.add('author')
+    bookauthor.textContent = ("By", lastbook.author)
+    const bookpagecount = document.createElement("div");
+    bookpagecount.classList.add('pagecount')
+    bookpagecount.textContent = (lastbook.pagecount)
+    const bookread = document.createElement("div");
+    bookread.classList.add('title')
+    bookread.textContent = lastbook.checkread
+    const rembutt = document.createElement("button")
+    rembutt.textContent =  'remove book'
+    rembutt.className = ("removeBook")
+    addBook.appendChild(cell)
+    cell.appendChild(booktitle)
+    cell.appendChild(bookauthor)
+    cell.appendChild(bookpagecount)
+    cell.appendChild(bookread)
+    cell.appendChild(rembutt)
+    console.log(cell.className[8, 12])
+    console.log(myLibrary[(cell.className[12]-1 )])
+    form.reset()
+    
+}
+
+//listens for button clicks and checks if it is removeBook button. removes parentNode(book) from DOM
+function someListener(event){
+    var element = event.target;
+    if( element.classList.contains("removeBook")){
+        element.parentNode.parentNode.removeChild(element.parentNode);
+    }
+
 }
