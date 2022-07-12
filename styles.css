@@ -4,6 +4,7 @@ body{
     flex-direction: column;
     align-items: center;
     align-content: center;
+    background-color: #fdebeb;
 }
 .header{
     margin: 40px;
@@ -21,15 +22,17 @@ body{
 
 #allBooks{
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
-    gap: 5px;
+    gap: 20px;
 }
 
 .books {
     display: flex;
     align-items: center;
     justify-content: center;
+    grid-column-start: 1;
+    grid-column-end: 5;
 }
 
 .content{
@@ -38,15 +41,33 @@ body{
     justify-content: center;
     align-items: center;
     margin-right: 5px;
-    color: red;
+    color:#333333;
     font-size: 24px;
+    background-color: #ddc4c4;
+    border-radius: 20px;
+    padding: 10px;
 }
-
 
 button{
     margin: 10px;
 }
 
-.removeBook{
-    
+.title{
+    font-weight: bold;
+    font-size: 25px;
 }
+
+.author{
+    font-style: italic;
+    font-size: 22px;
+}
+
+.pagecount{
+    color: #0f571e;
+    font-size: 18px;
+}
+
+.checkread{
+    font-size: 18px;
+}
+

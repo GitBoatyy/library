@@ -55,7 +55,7 @@ function displayBook(){
     bookpagecount.classList.add('pagecount')
     bookpagecount.textContent = (lastbook.pagecount)
     const bookread = document.createElement("div");
-    bookread.classList.add('title')
+    bookread.classList.add('checkread')
     bookread.textContent = lastbook.checkread
     const rembutt = document.createElement("button")
     rembutt.textContent =  'remove book'
